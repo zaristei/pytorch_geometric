@@ -13,6 +13,7 @@ from .on_disk_dataset import OnDiskDataset
 from .makedirs import makedirs
 from .download import download_url, download_google_url
 from .extract import extract_tar, extract_zip, extract_bz2, extract_gz
+from .large_graph_indexer import LargeGraphIndexer, TripletLike, get_features_for_triplets, get_features_for_triplets_groups
 
 from torch_geometric.lazy_loader import LazyLoader
 
@@ -24,6 +25,8 @@ data_classes = [
     'Dataset',
     'InMemoryDataset',
     'OnDiskDataset',
+    'LargeGraphIndexer',
+    'TripletLike',
 ]
 
 remote_backend_classes = [
@@ -47,6 +50,8 @@ helper_functions = [
     'extract_zip',
     'extract_bz2',
     'extract_gz',
+    'get_features_for_triplets',
+    "get_features_for_triplets_groups",
 ]
 
 __all__ = data_classes + remote_backend_classes + helper_functions
