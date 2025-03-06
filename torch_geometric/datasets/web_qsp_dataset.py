@@ -412,7 +412,7 @@ class WebQSPDataset(KGQABaseDataset):
         self, root: str, split: str = "train", force_reload: bool = False,
         verbose: bool = False, use_pcst: bool = True,
         load_dataset_kwargs: Dict[str, Any] = dict(),
-        retrieval_batch_size: int = 500
+        retrieval_batch_size: int = 400
     ) -> None:
         dataset_name = 'rmanluo/RoG-webqsp'
         super().__init__(dataset_name, root, split, force_reload, verbose,
