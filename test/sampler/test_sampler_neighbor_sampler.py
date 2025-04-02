@@ -7,6 +7,7 @@ from torch_geometric.sampler.neighbor_sampler import (
     BidirectionalNeighborSampler,
     NeighborSampler,
 )
+
 from torch_geometric.testing import (
     MyFeatureStore,
     MyGraphStore,
@@ -30,6 +31,7 @@ def _init_sample_graph(hetero=False):
     #############                    ############
     """
     # node attributes dont matter much, they are just necessary for heterogeneous graphs to work
+
     sample_x = torch.tensor([[0], [1], [2], [3]])
 
     if not hetero:
@@ -55,6 +57,7 @@ def _init_graph_to_sample(graph_dtype, hetero=False, reverse=False):
                 flipped_edge_index = edge_index.flip(0)
                 sample_edge_indices[edge_type] = dict(
                     {"edge_index": flipped_edge_index})
+
     graph_to_sample = None
     if graph_dtype == 'data' and not hetero:
         graph_to_sample = Data(edge_index=sample_edge_indices, x=sample_x)
@@ -361,3 +364,4 @@ def test_bidirectional_neighbor_sampler(input_type):
 @pytest.mark.parametrize('input_type', ['data', 'remote'])
 def test_bidirectional_neighbor_sampler_hetero(input_type):
     raise NotImplementedError
+
