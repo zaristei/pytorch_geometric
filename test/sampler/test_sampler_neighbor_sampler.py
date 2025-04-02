@@ -7,7 +7,6 @@ from torch_geometric.sampler.neighbor_sampler import (
     BidirectionalNeighborSampler,
     NeighborSampler,
 )
-
 from torch_geometric.testing import (
     MyFeatureStore,
     MyGraphStore,
@@ -364,4 +363,3 @@ def test_bidirectional_neighbor_sampler(input_type):
 @pytest.mark.parametrize('input_type', ['data', 'remote'])
 def test_bidirectional_neighbor_sampler_hetero(input_type):
     raise NotImplementedError
-
